@@ -11,8 +11,9 @@ public class Base {
 
 	@BeforeTest(alwaysRun = true)
 	public void intialize() throws Exception {
-		RestAssured.baseURI = ReadPropertiesFile.getURI();
-		RestAssured.port = ReadPropertiesFile.getPort();
+		prop = new ReadPropertiesFile();
+		RestAssured.baseURI = prop.getURI();
+		RestAssured.port = prop.getPort();
 	}
 
 }

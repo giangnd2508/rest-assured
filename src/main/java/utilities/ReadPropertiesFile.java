@@ -8,8 +8,8 @@ import java.util.Properties;
 
 public class ReadPropertiesFile {
 
-	static String uri, port;
-	static Properties prop;
+	String uri, port;
+	Properties prop;
 
 	public ReadPropertiesFile() throws IOException {
 		prop = readProperties();
@@ -29,11 +29,11 @@ public class ReadPropertiesFile {
 		return prop;
 	}
 
-	public static String getURI() throws FileNotFoundException {
+	public String getURI() throws FileNotFoundException {
 		return uri = prop.getProperty("uri");
 	}
 
-	public static int getPort() throws FileNotFoundException {
+	public int getPort() throws FileNotFoundException {
 		String port = prop.getProperty("port");
 		int result = Integer.parseInt(port);
 		return result;
