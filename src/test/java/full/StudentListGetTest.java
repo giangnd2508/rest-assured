@@ -15,9 +15,11 @@ public class StudentListGetTest extends Base {
 		RestAssured.basePath = "/student";
 	}
 
-	@Test
+	@Test(groups = "smoke")
 	public void showAllStudentInfoTest() {
-		Response res = given().when().get("/list");
+		Response res = given()
+				.when()
+				.get("/list");
 		System.out.println(res.body().prettyPrint());
 	}
 }
